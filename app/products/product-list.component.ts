@@ -5,7 +5,12 @@ import {Component} from 'angular2/core'
     templateUrl: 'app/products/product-list.component.html'
 })
 export class ProductListComponent {
+    //properties are down below
     pageTitle: string = 'Product List';
+    imageWidth : number = 45;
+    imageMargin : number = 2;
+    showImage: boolean =false;
+    listFilter: string = 'cart';
     products: any[] = [
         {
             "productId": 2,
@@ -30,4 +35,9 @@ export class ProductListComponent {
 
 
     ];
+
+    // Methods are down below
+    toggleImage(): void{
+        this.showImage = !this.showImage;
+    }
 }

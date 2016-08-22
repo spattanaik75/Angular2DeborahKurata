@@ -20,7 +20,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             ProductListComponent = (function () {
                 function ProductListComponent() {
+                    //properties are down below
                     this.pageTitle = 'Product List';
+                    this.imageWidth = 45;
+                    this.imageMargin = 2;
+                    this.showImage = false;
+                    this.listFilter = 'cart';
                     this.products = [
                         {
                             "productId": 2,
@@ -44,6 +49,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                     ];
                 }
+                // Methods are down below
+                ProductListComponent.prototype.toggleImage = function () {
+                    this.showImage = !this.showImage;
+                };
                 ProductListComponent = __decorate([
                     core_1.Component({
                         selector: 'pm-products',
