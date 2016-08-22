@@ -46,7 +46,10 @@
                         <td>{{product.releaseDate}}</td>
                         <!--show currency in usd , symbol, digits as x.xx-->
                         <td>{{product.price | currency: 'USD' : true: '1.2-2'}}</td>
-                        <td>{{product.starRating}}</td>
+                        <td>
+                            <ai-star [rating]='product.starRating'
+                                    (ratingClicked)='onRatingClicked($event)'></ai-star>
+                        </td>
                     </tr>
                 </tbody>
             </table>
